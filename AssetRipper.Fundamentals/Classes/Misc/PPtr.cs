@@ -95,7 +95,10 @@ namespace AssetRipper.Core.Classes.Misc
 					asset = default;
 					return false;
 				default:
-					throw new Exception($"Object's type {@object.GetType().Name} isn't assignable from {typeof(T).Name}");
+					Console.WriteLine($"Warning: object's type {@object.GetType().Name} isn't assignable from {typeof(T).Name}");
+					asset = default;
+					return false;
+					//throw new Exception($"Object's type {@object.GetType().Name} isn't assignable from {typeof(T).Name}");
 			}
 		}
 
